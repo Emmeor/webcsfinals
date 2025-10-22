@@ -5,44 +5,41 @@
 }
 
 
-/* ensure bar stays full-bleed and provides a stable positioning context */
+
 .nav-inner .nav-list{
     width: 100%;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0 1rem; /* inner gutter only; no layout reservation */
+    padding: 0 1rem; 
 }
 
-/* make room in the nav for the centered brand */
 .nav-inner .nav-list{
     width: 100%;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0 1rem; /* keep inner gutter but don't shift items */
-    /* removed padding-left reservation so nav items don't move */
+    padding: 0 1rem; 
 }
 
-/* brand-wrapper is moved into the nav visually (keeps HTML unchanged) */
 .brand-wrapper{
-    position: fixed;                              /* out of flow so it won't move nav items */
-    top: calc(var(--nav-height) / 2);             /* vertically centered inside the bar */
+    position: fixed;                              
+    top: calc(var(--nav-height) / 2);             
     left: 50%;
-    transform: translate(-50%, -50%);             /* perfectly centered horizontally */
+    transform: translate(-50%, -50%);             
     height: var(--nav-height);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
     padding: 0 0.5rem;
-    z-index: 1001;                                /* above the nav */
-    pointer-events: none;                         /* allow clicks through to nav links */
+    z-index: 1001;                                
+    pointer-events: none;                        
 }
 
-/* compact brand styling for inside-bar placement */
+
 .brand{
-    pointer-events: none;                         /* keep links clickable underneath */
+    pointer-events: none;                         
     font-family: 'Pacifico', cursive;
     font-style: italic;
     font-weight: 400;
@@ -57,12 +54,10 @@
     line-height: 1;
 }
 
-/* keep page content offset by the nav height (logo is inside the bar now) */
 body{
     padding-top: var(--nav-height);
 }
 
-/* small screens: move brand to the left so it doesn't overlap nav items and remove the left padding reserve */
 @media (max-width: 600px){
     .brand-wrapper{
         left: 0.5rem;
